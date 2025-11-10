@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Rocío iPunto - Agencia Digital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --soft-orange: #ffb265;
+            --light-beige: #ffe3c6;
+            --lilac: #d1b2ff;
+            --intense-orange: #ff9966;
+            --light-lavender: #f5e4ff;
+            --white: #ffffff;
+            --black: #000000;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+        }
+        header {
+            position: relative;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            height: 60vh;
+        }
+        .mySlides {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: fade 1s ease-in-out;
+        }
+        @keyframes fade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+  
+        }
+        .slide-text {
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            position: relative;
+        }
+        .slide-text-content {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+            max-width: 90%;
+            border-radius: 5px;
+        }
+        .slide-text-content h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .slide-text-content p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--intense-orange);
+            color: var(--black);
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: var(--soft-orange);
+        }
+        nav.grid-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            background-color: var(--white);
+        }
+        nav.grid-menu a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            background-color: var(--light-beige);
+            color: var(--black);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s, background-color 0.3s;
+            text-align: center;
+            padding: 20px;
+        }
+        nav.grid-menu a:nth-child(1) { background-color: var(--light-beige); }
+        nav.grid-menu a:nth-child(2) { background-color: var(--soft-orange); }
+        nav.grid-menu a:nth-child(3) { background-color: var(--lilac); }
+        nav.grid-menu a:nth-child(4) { background-color: var(--intense-orange); color: var(--black); }
+        nav.grid-menu a:nth-child(5) { background-color: var(--light-lavender); }
+        nav.grid-menu a:nth-child(6) { background-color: var(--light-beige); }
+        nav.grid-menu a:hover {
+            transform: translateY(-5px);
+        }
+        section {
+            padding: 60px 20px;
+        }
+        .beige-bg {
+            background-color: var(--light-beige);
+            color: var(--black);
+        }
+        .lilac-bg {
+            background-color: var(--lilac);
+            color: var(--black);
+        }
+        .default-bg {
+            background-color: var(--white);
+            color: var(--black);
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--intense-orange);
+        }
+        .beige-bg h2,
+        .lilac-bg h2 {
+            color: var(--black);
+        }
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            background-color: var(--light-lavender);
+            color: var(--black);
+        }
+        @media (max-width: 768px) {
+            .slideshow-container {
+                height: 40vh;
+            }
+            nav.grid-menu {
+                gap: 15px;
+                padding: 20px;
+            }
+            nav.grid-menu a {
+                height: 100px;
+                font-size: 1rem;
+            }
+            .slide-text-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Carrusel Hero Slide Moderno -->
+<header>
+  <div class="hero-slider">
+    <div class="slide active">
+      <img src="imagenesslider1.jpg.png" alt="Rocío iPunto - Agencia Digital">
+    </div>
+    <div class="slide">
+      <img src="imagenesslider2.jpg.png" alt="Servicios Rocío iPunto">
+    </div>
+    <div class="slide">
+      <img src="imagenesslider3.jpg.png" alt="Innova con Rocío iPunto">
+    </div>
+  </div>
+
+  <style>
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 100%;
+      opacity: 0;
+      transition: all 1s ease-in-out;
+    }
+
+    .slide.active {
+      left: 0;
+      opacity: 1;
+    }
+
+ .mySlides img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+  display: block;
+  margin: 0 auto;
+}
+.slideshow-container {
+  height: 80vh; /* más alto para fotos verticales */
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  height: auto;              /* ya no fuerza el alto */
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .mySlides img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  </style>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    const totalSlides = slides.length;
+
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % totalSlides;
+      slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 5000); // cambia cada 5 segundos
+  </script>
+</header>
+
+<!-- Sección: Elige tu plan -->
+<section id="planes" style="background-color:#d1b2ff; padding:80px 20px; text-align:center;">
+  <h2 style="color:#fff; font-size:2rem; margin-bottom:40px;">Elige tu <span style="color:#4a2dbf;">plan</span></h2>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; max-width:1100px; margin:auto;">
+    
+    <!-- Plan 1 -->
+    <div style="background-color:#ffffff; border-radius:12px; padding:30px; width:300px; text-align:left; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <h3 style="color:#4a2dbf;">Plan: Publicidad y redes sociales</h3>
+      <p style="margin-top:10px; color:#333;">
+        Estrategia de contenido para 20 publicaciones + 10 stories.<br><br>
+        <b>Copywriter y Diseño Gráfico:</b> Que se ajustan a la identidad de marca.<br><br>
+        <b>Community Manager:</b> para gestionar plataformas de redes sociales.<br><br>
+        <b>Campañas:</b> Facebook e Instagram.<br>
+        <b>Reportes de Campaña:</b> Automáticamente entregados al finalizar cada campaña publicitaria.
+      </p>
+    </div>
+
+    <!-- Plan 2 -->
+    <div style="background-color:#ffffff; border-radius:12px; padding:30px; width:300px; text-align:left; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <h3 style="color:#4a2dbf;">Plan: Meta business</h3>
+      <p style="margin-top:10px; color:#333;">
+        Creación de contenido de 6 piezas por mes.<br><br>
+        <b>Estrategia personalizada</b> para la venta de productos o servicios desde tu marca.<br><br>
+        <b>Diseño Gráfico</b> adaptado a tu identidad visual.<br><br>
+        <b>Reportes de mensajería:</b> para campañas publicitarias.<br><br>
+        <b>Campañas:</b> configuradas para Meta Business y Facebook.
+      </p>
+    </div>
+
+    <!-- Plan 3 -->
+    <div style="background-color:#ffffff; border-radius:12px; padding:30px; width:300px; text-align:left; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <h3 style="color:#4a2dbf;">Plan: Anuncia tu negocio</h3>
+      <p style="margin-top:10px; color:#333;">
+        Creación de contenido de 6 piezas de contenido.<br><br>
+        <b>Estrategia personalizada</b> para tu marca. Creación de campañas publicitarias con objetivos de visibilidad y resultados.<br><br>
+        <b>Diseño Gráfico</b> adaptado a tu marca.<br><br>
+        <b>Reportes de mensajería:</b> para campañas publicitarias.<br><br>
+        <b>Campañas:</b> para Meta Business.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Estilos extra -->
+<style>
+    .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+        overflow: hidden;
+        height: 60vh;
+    }
+    .mySlides {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .mySlides img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    /* Botones */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+        transition: 0.3s;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        z-index: 1000;
+    }
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.5);
+    }
+    /* Puntos indicadores */
+    .dots-container {
+        position: relative;
+        top: 20px;
+    }
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 4px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+</style>
+
+<!-- JavaScript for Slideshow -->
+<script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("mySlides");
+
+    function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 5000); // Cambia cada 5 segundos
+    }
+
+    showSlides();
+</script>
+
+    <!-- Grid Menu -->
+    <nav class="grid-menu">
+        <a href="#conoceme">Conóceme</a>
+        <a href="#trabaja">Trabaja con Rocío iPunto</a>
+        <a href="#resultados">Resultados clientes</a>
+        <a href="#valores">Valores y fundamentos</a>
+        <a href="#terminos">Términos y condiciones</a>
+        <a href="#clientes">Clientes felices</a>
+        <a href="#equipo">Nuestro equipo</a>
+        
+    </nav>
+
+    <!-- Section: Conóceme -->
+    <section id="conoceme" class="beige-bg">
+        <h2>Conóceme</h2>
+        <p>Hola, soy Rocío, fundadora de Rocío iPunto. Con más de 10 años de experiencia en marketing digital, mi pasión es ayudar a emprendedores y empresas a destacar en internet de manera creativa y efectiva.</p>
+        <p>Mi enfoque profesional combina análisis de datos, estrategias de contenido y diseño amigable para construir proyectos digitales únicos. Comprometida con la calidad y la calidez en el servicio, siempre pongo al cliente en primer lugar.</p>
+    </section>
+
+    <!-- Section: Trabaja con Rocio iPunto -->
+    <section id="trabaja" class="default-bg">
+        <h2>Trabaja con Rocío iPunto</h2>
+        <p>En nuestra agencia ofrecemos servicios personalizados de gestión de redes sociales, diseño web, publicidad online y branding. Cada proyecto recibe una estrategia a medida que se adapta a tu identidad y objetivos.</p>
+        <p>Trabajando juntos, nos aseguramos de mantener una comunicación clara y transparente. Nuestro compromiso es impulsar tu marca con soluciones innovadoras que generen un crecimiento sostenible.</p>
+    </section>
+
+    <!-- Section: Resultados clientes -->
+    <section id="resultados" class="lilac-bg">
+        <h2>Resultados de clientes</h2>
+        <p>Hemos ayudado a numerosos clientes a lograr un aumento significativo en su visibilidad y conversiones. Nuestros casos de éxito incluyen desde pequeñas startups hasta medianas empresas, todas satisfechas con el crecimiento obtenido.</p>
+        <p>Cada resultado se basa en un análisis detallado y en el ajuste continuo de estrategias, garantizando que cada inversión en marketing digital aporte un retorno positivo.</p>
+    </section>
+
+    <!-- Section: Valores y fundamentos -->
+    <section id="valores" class="default-bg">
+        <h2>Valores y fundamentos</h2>
+        <p>La transparencia, la innovación y la orientación al cliente son los pilares de nuestro trabajo. Creemos en el poder de la colaboración y la creatividad para resolver problemas reales del mercado.</p>
+        <p>Nuestro objetivo es construir relaciones de largo plazo basadas en la confianza mutua, ofreciendo siempre un trato cercano y humano. Cada proyecto refleja nuestra dedicación y responsabilidad profesional.</p>
+    </section>
+
+    <!-- Section: Términos y condiciones -->
+    <section id="terminos" class="beige-bg">
+        <h2>Términos y condiciones</h2>
+        <p>El uso de nuestro sitio web y la contratación de servicios está sujeto a términos y condiciones detallados. Nos comprometemos a proteger tu privacidad y a ofrecer transparencia total en cada acuerdo comercial.</p>
+        <p>Para más información sobre nuestras políticas y requisitos legales, puedes contactarnos directamente. Te aseguramos un servicio responsable y comprometido con las buenas prácticas del sector.</p>
+    </section>
+
+    <!-- Section: Clientes felices -->
+    <section id="clientes" class="default-bg">
+        <h2>Clientes felices</h2>
+        <p>El testimonio de nuestros clientes es nuestro mejor aval. Personas y empresas que nos han elegido repiten y recomiendan nuestro trabajo, destacando nuestra dedicación y los resultados obtenidos.</p>
+        <p>Nos sentimos orgullosos de cada historia de éxito que construimos juntos, sabiendo que cada colaboración impulsa tanto a nuestros clientes como a nosotros mismos en la excelencia profesional.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Rocío iPunto - Agencia Digital. Todos los derechos reservados.
+    </footer>
+    
+<!-- Section: Nuestro Equipo -->
+<section id="equipo" class="beige-bg">
+    <h2 class="section-title">Nuestro Equipo</h2>
+    <div class="equipo-grid">
+        <div class="perfil">
+            <img src="equipo1.jpg" alt="Víctor Rosales">
+            <h3>Víctor Rosales</h3>
+            <p>Diseñador Gráfico<br>24 años · Nueva Esparta, Venezuela</p>
+        </div>
+        <div class="perfil">
+            <img src="equipo2.jpg" alt="Paz Bernardita Salazar">
+            <h3>Paz Bernardita Salazar</h3>
+            <p>Community y Social Media Manager / Diseñadora<br>40 años · Talca, Chile</p>
+        </div>
+        <div class="perfil">
+            <img src="equipo3.jpg" alt="Sofía Rodríguez">
+            <h3>Sofía Rodríguez</h3>
+            <p>Diseñadora Gráfica / Community Manager<br>30 años · Jujuy, Argentina</p>
+        </div>
+        <div class="perfil">
+            <img src="equipo4.jpg" alt="Matías Medina">
+            <h3>Matías Medina</h3>
+            <p>Diseñador Gráfico y Community Manager<br>23 años · Salta, Argentina</p>
+        </div>
+        </div>
+    </div>
+    
+</section>
+
+    <!-- JavaScript for Slideshow -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("mySlides");
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 5000);
+        }
+        showSlides();
+    </script>
+</body>
+
+    <!-- JavaScript for Slideshow -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("mySlides");
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 5000);
+        }
+        showSlides();
+    </script>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/56973861336" class="whatsapp-float" target="_blank" aria-label="Chat en WhatsApp">
+        📱
+    </a>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .whatsapp-float:hover {
+            background-color: #20b75e;
+        }
+    </style>
+    <style>
+        /* Tus estilos previos aquí... */
+    
+        .equipo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+    
+        .perfil {
+            text-align: center;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    
+        .perfil img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+    
+        .perfil h3 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            color: var(--intense-orange);
+        }
+    
+        .perfil p {
+            font-size: 0.95rem;
+            color: var(--black);
+        }
+    </style>
+    
+</body>
+</html>
+
+<!-- Sección: Contáctanos -->
+<section id="contacto" style="background-color:#d1b2ff; padding:80px 20px; text-align:center;">
+  <h2 style="color:#000; font-size:2rem; margin-bottom:10px;">Contáctanos</h2>
+  <p style="color:#333; font-size:1.1rem; margin-bottom:30px;">
+    ¿Tienes un proyecto en mente o deseas más información sobre un plan? Escríbenos y te responderemos pronto 💬
+  </p>
+
+  <form action="https://formsubmit.co/hopegaml@gmail.com" method="POST"
+        style="max-width:600px; margin:auto; background:#fff; padding:40px; border-radius:15px;
+               box-shadow:0 4px 15px rgba(0,0,0,0.1); font-family:'Poppins',sans-serif;">
+    
+    <!-- Nombre -->
+    <input type="text" name="nombre" placeholder="Tu nombre completo" required
+           style="width:100%; padding:12px; margin-bottom:15px; border:2px solid #ffe3c6;
+                  border-radius:10px; font-size:1rem;">
+
+    <!-- Correo -->
+    <input type="email" name="email" placeholder="Tu correo electrónico" required
+           style="width:100%; padding:12px; margin-bottom:15px; border:2px solid #ffe3c6;
+                  border-radius:10px; font-size:1rem;">
+
+    <!-- Selección de Plan -->
+    <select name="plan" required
+            style="width:100%; padding:12px; margin-bottom:15px; border:2px solid #ffe3c6;
+                   border-radius:10px; font-size:1rem;">
+      <option value="">Selecciona un plan</option>
+      <option value="Publicidad y redes sociales">
+        Publicidad y redes sociales — Estrategia y gestión de 20 publicaciones + 10 stories
+      </option>
+      <option value="Meta business">
+        Meta business — Contenido de 6 piezas mensuales y gestión en Meta Ads
+      </option>
+      <option value="Anuncia tu negocio">
+        Anuncia tu negocio — Estrategias personalizadas para posicionar tu marca
+      </option>
+    </select>
+
+    <!-- Mensaje -->
+    <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." required
+              style="width:100%; height:130px; padding:12px; margin-bottom:20px;
+                     border:2px solid #ffe3c6; border-radius:10px; font-size:1rem; resize:none;"></textarea>
+    
+    <!-- Botón -->
+    <button type="submit"
+            style="background-color:#ff9966; color:#000; border:none; padding:14px 30px;
+                   font-weight:600; border-radius:10px; cursor:pointer; transition:background-color 0.3s;">
+      Enviar mensaje
+    </button>
+
+    <!-- Configuración de FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde Rocío iPunto 💬">
+    <input type="hidden" name="_next" value="https://tu-dominio.cl/gracias.html">
+  </form>
+</section>
